@@ -7,9 +7,29 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="ClickHandler.cs" t="Include" />
-          <e p="TabSelector.cs" t="Include" />
-          <e p="UnitySortingEvent.cs" t="Include" />
+          <e p="Events" t="Include">
+            <e p="UnityItemEvent.cs" t="Include" />
+            <e p="UnitySortingEvent.cs" t="Include" />
+          </e>
+          <e p="Inventory" t="Include">
+            <e p="ClickHandler.cs" t="Include" />
+            <e p="ItemGenerator.cs" t="Include" />
+            <e p="TabController.cs" t="Include" />
+            <e p="TabSelector.cs" t="Include" />
+          </e>
+          <e p="Items" t="Include">
+            <e p="ArmItem.cs" t="Include" />
+            <e p="HeadItem.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
+            <e p="LegItem.cs" t="Include" />
+            <e p="Stats.cs" t="Include" />
+          </e>
+          <e p="Utility" t="Include">
+            <e p="ObjectFactory.cs" t="Include" />
+            <e p="PoolObject.cs" t="Include" />
+            <e p="Singleton.cs" t="Include" />
+            <e p="StatGenerator.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
