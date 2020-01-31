@@ -1,17 +1,18 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
-[RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
+[RequireComponent(typeof(Collider2D), typeof(SortingGroup))]
 public class ClickHandler : MonoBehaviour {
-    public UnityEventRenderer clickEvent;
-    private SpriteRenderer _renderer;
+    public UnitySortingEvent clickSortingEvent;
+    private SortingGroup _sortingGroup;
 
     private void Awake() {
-        _renderer = GetComponent<SpriteRenderer>();
+        _sortingGroup = GetComponent<SortingGroup>();
     }
 
     private void OnMouseDown() {
-        clickEvent.Invoke(_renderer);
+        clickSortingEvent.Invoke(_sortingGroup);
     }
 }

@@ -9,7 +9,7 @@
         <e p="Scripts" t="Include">
           <e p="ClickHandler.cs" t="Include" />
           <e p="TabSelector.cs" t="Include" />
-          <e p="UnityEventRenderer.cs" t="Include" />
+          <e p="UnitySortingEvent.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
