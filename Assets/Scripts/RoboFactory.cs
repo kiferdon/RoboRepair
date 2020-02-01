@@ -12,9 +12,8 @@ public class RoboFactory : MonoBehaviour
 {
     [SerializeField] private Robot robotPrefab;
     public static RoboFactory Instance;
-    [SerializeField] private List<BodyPart> heads;
-    [SerializeField] private List<BodyPart> arms;
-    [SerializeField] private List<BodyPart> legs;
+    [SerializeField] private BodyPart head,arm,leg;
+    
     [SerializeField] private float probabilityOfFillingSlot;
     [SerializeField] private Vector2Int minMaxRequiredStats;
     [SerializeField] private ConveyorController conveyorController;
@@ -51,10 +50,12 @@ public class RoboFactory : MonoBehaviour
         {
             return null;
         }
-        var randomItemNumber = Random.Range(0, heads.Count);
-        BodyPart bodyPart = Instantiate(heads[randomItemNumber]);
-        bodyPart.item.stats = StatGenerator.Stats;
-        return bodyPart;    }
+        //var randomItemNumber = Random.Range(0, heads.Count);
+        BodyPart bodyPart = Instantiate(head);
+        //bodyPart.item.stats = StatGenerator.Stats;
+        bodyPart.GetComponent<HeadItem>().Init();
+        return bodyPart;    
+    }
     
     private BodyPart CreateArm()
     {
@@ -62,9 +63,11 @@ public class RoboFactory : MonoBehaviour
         {
             return null;
         }
-        var randomItemNumber = Random.Range(0, arms.Count);
-        BodyPart bodyPart = Instantiate(arms[randomItemNumber]);
-        bodyPart.item.stats = StatGenerator.Stats;
+        //var randomItemNumber = Random.Range(0, arms.Count);
+        BodyPart bodyPart = Instantiate(arm);
+        //bodyPart.item.stats = StatGenerator.Stats;
+        bodyPart.GetComponent<ArmItem>().Init();
+
         //print(bodyPart.item.stats.Dexterity+" "+bodyPart.item.stats.Strength+" "+bodyPart.item.stats.Intelligence);
         return bodyPart;
     }
@@ -75,9 +78,11 @@ public class RoboFactory : MonoBehaviour
         {
             return null;
         }
-        var randomItemNumber = Random.Range(0, legs.Count);
-        BodyPart bodyPart = Instantiate(legs[randomItemNumber]);
-        bodyPart.item.stats = StatGenerator.Stats;
+        //var randomItemNumber = Random.Range(0, legs.Count);
+        BodyPart bodyPart = Instantiate(leg);
+        bodyPart.GetComponent<LegItem>().Init();
+
+        //bodyPart.item.stats = StatGenerator.Stats;
         return bodyPart;    }
 
     public void GetItemForSlot(Slot slot)

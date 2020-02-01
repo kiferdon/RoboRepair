@@ -2806,7 +2806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winPoints: {fileID: 11400000, guid: 3a9355b78767aea41b698621e12606c3, type: 2}
   turnPointTrigger: {fileID: 224204064}
-  pointsOnStart: 0
+  pointsOnStart: 50
 --- !u!4 &1305409175
 Transform:
   m_ObjectHideFlags: 0
