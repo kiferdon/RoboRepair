@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instanceCount: 30
+  frontRenderer: {fileID: 7238581134368396963}
   backRenderer: {fileID: 7238581135596155742}
   strengthRenderer: {fileID: 4539330959973221065}
   dexterityRenderer: {fileID: 4539330959939136772}
@@ -106,6 +107,12 @@ GameObject:
 --- !u!212 &7238581135596155742 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 503760583240621443, guid: d8702242ee591974cbaf740540317f41,
+    type: 3}
+  m_PrefabInstance: {fileID: 7100255371065552605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7238581134368396963 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 503760581786122366, guid: d8702242ee591974cbaf740540317f41,
     type: 3}
   m_PrefabInstance: {fileID: 7100255371065552605}
   m_PrefabAsset: {fileID: 0}

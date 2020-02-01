@@ -1451,9 +1451,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6698e978f8f02a54080b44dfffe75c10, type: 3}
   - {fileID: 21300000, guid: 34817856f9466c74eb526f06e4a6403d, type: 3}
   - {fileID: 21300000, guid: 68d3fe20225f28b42a7056030c2abace, type: 3}
-  strengthBack: {fileID: 21300000, guid: a4ac1886b431fd244b3144e33bb5e258, type: 3}
-  dexterityBack: {fileID: 21300000, guid: 5d50d75f9d360194c8e4e67b10073222, type: 3}
-  intelligenceBack: {fileID: 21300000, guid: 27d8801f54049e54bbc7ec0a495f4d01, type: 3}
+  armSprites:
+  - {fileID: 21300000, guid: 528b7324059d0af41893b1094f511afc, type: 3}
+  - {fileID: 21300000, guid: c99ab593c33ad424f9a9bce79e70ad38, type: 3}
+  - {fileID: 21300000, guid: c74ffda31c76c9246a35d5150f182d4d, type: 3}
+  legSprites:
+  - {fileID: 21300000, guid: 17935d2358a76b341baaaffa13819161, type: 3}
+  - {fileID: 21300000, guid: 1a392971a09e8bc42abddeb8b4c328c4, type: 3}
+  - {fileID: 21300000, guid: 9a05ed74ef56214408ee070b3d9995ae, type: 3}
+  headSprites:
+  - {fileID: 21300000, guid: e52dee33952531543bdb176c6f975dcd, type: 3}
+  - {fileID: 21300000, guid: bde946fee7183bd44b59a25505b93f75, type: 3}
+  - {fileID: 21300000, guid: 15a37888d20fe1047a248416b9f45614, type: 3}
+  strengthColor: {r: 0.85098046, g: 0.21176472, b: 0.30588236, a: 1}
+  dexterityColor: {r: 0.454902, g: 0.7254902, b: 0.44705886, a: 1}
+  intelligenceColor: {r: 0.39607847, g: 0.75294125, b: 0.9176471, a: 1}
 --- !u!82 &928337153
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2431,7 +2443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1673622083
 MonoBehaviour:
   m_ObjectHideFlags: 0

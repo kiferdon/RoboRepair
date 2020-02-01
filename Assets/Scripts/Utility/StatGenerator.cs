@@ -6,16 +6,20 @@ using Random = UnityEngine.Random;
 namespace Utility {
     public class StatGenerator : Singleton<StatGenerator> {
         public Sprite[] digits = new Sprite[9];
-        public Sprite strengthBack;
-        public Sprite dexterityBack;
-        public Sprite intelligenceBack;
+        public Sprite[] armSprites;
+        public Sprite[] legSprites;
+        public Sprite[] headSprites;
+
+        public Color strengthColor;
+        public Color dexterityColor;
+        public Color intelligenceColor;
 
         public static Stats Stats {
             get {
                 var strength = Random.Range(1, 9);
                 var dexterity = Random.Range(1, 9);
                 var intelligence = Random.Range(1, 9);
-                return new Stats(dexterity, strength, intelligence, GetBackground(dexterity, strength, intelligence));
+                return new Stats(dexterity, strength, intelligence);
             }
         }
 
@@ -23,18 +27,34 @@ namespace Utility {
             return Instance.digits[digit - 1];
         }
 
-        private static Sprite GetBackground(int dexterity, int strength, int intelligence) {
+        public static Color GetColor(Stats stats) {
+            var dexterity = stats.Dexterity;
+            var strength = stats.Strength;
+            var intelligence = stats.Intelligence;
             if (strength >= dexterity && strength >= intelligence) {
-                return Instance.strengthBack;
+                return Instance.strengthColor;
             }
             else if (dexterity >= strength && dexterity >= intelligence) {
-                return Instance.dexterityBack;
+                return Instance.dexterityColor;
             }
             else if (intelligence >= dexterity && intelligence >= strength) {
-                return Instance.intelligenceBack;
+                return Instance.intelligenceColor;
             }
 
             throw new ArgumentException("Cannot get proper background");
+        }
+
+        public static Sprite GetSprite(Parts part) {
+            switch (part) {
+                case Parts.ARM:
+                    return Instance.armSprites[Random.Range(0, Instance.armSprites.Length)];
+                case Parts.LEG:
+                    return Instance.legSprites[Random.Range(0, Instance.legSprites.Length)];
+                case Parts.HEAD:
+                    return Instance.headSprites[Random.Range(0, Instance.headSprites.Length)];
+            }
+
+            throw new ArgumentException("Cant find part");
         }
     }
 }
