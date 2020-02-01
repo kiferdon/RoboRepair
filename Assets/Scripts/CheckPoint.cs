@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class CheckPoint : MonoBehaviour
 {
-    public UnityEvent eventOnCheckPoint;
+    public event Action<Robot> EventOnCheckPoint;
     private Type _robotType;
     
     // Start is called before the first frame update
@@ -17,9 +17,11 @@ public class CheckPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetType() == _robotType)
+        //if (other.GetType() == _robotType)
+        if(other.GetComponent<Robot>())
         {
-            eventOnCheckPoint?.Invoke();
+            print("Trigger");
+            EventOnCheckPoint?.Invoke(other.GetComponent<Robot>());
         }
     }
 }

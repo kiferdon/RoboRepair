@@ -11,6 +11,9 @@ public class Robot : PoolObject
     private Characteristics _characteristics;
     public Characteristics Characteristics => _characteristics;
     private Characteristics _requiredStats;
+
+    public Characteristics RequiredStats => _requiredStats;
+
     [SerializeField] private List<Slot> slots;
     [SerializeField] private TextMeshProUGUI _textMeshProUgui;
     public event Action<Characteristics,Characteristics> UpdatePoints;
@@ -36,15 +39,6 @@ public class Robot : PoolObject
         _characteristics.Subtract(characteristics);
         OnUpdatePoints();
     }
-
-    private void Update()
-    {
-        // _textMeshProUgui.text = _characteristics.intelligence.ToString()+" "
-        //                                                                 +_characteristics.strength.ToString()+" "
-        //                                                                 +_characteristics.agility.ToString()+" ";
-    }
-
-    
 
     public override void Init()
     {
