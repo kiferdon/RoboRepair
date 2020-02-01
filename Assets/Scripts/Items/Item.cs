@@ -5,6 +5,7 @@ namespace Items {
     public class Item : PoolObject {
         public SpriteRenderer frontRenderer;
         public SpriteRenderer backRenderer;
+        public SpriteRenderer realSprite;
         [SerializeField] protected SpriteRenderer strengthRenderer;
         [SerializeField] protected SpriteRenderer dexterityRenderer;
         [SerializeField] protected SpriteRenderer intelligenceRenderer;

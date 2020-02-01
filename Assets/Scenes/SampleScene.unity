@@ -2634,6 +2634,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1264592258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1264592260}
+  - component: {fileID: 1264592259}
+  m_Layer: 0
+  m_Name: ItemImageSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1264592259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264592258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fd8da88c36db7468222405380ee244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heads:
+  - {fileID: 21300000, guid: 95ec22962785aff4bb67402cf5151cc3, type: 3}
+  - {fileID: 21300000, guid: e90dfda94eefff449aa33264f492c0ea, type: 3}
+  - {fileID: 21300000, guid: caa48bde8d295894288db1668c43a96f, type: 3}
+  arms:
+  - {fileID: 21300000, guid: 6e04e605502bfae41bc32e48dc3b71e6, type: 3}
+  - {fileID: 21300000, guid: a2a99b4926337e44e9fe0135bcf57124, type: 3}
+  - {fileID: 21300000, guid: b670ec17f67fbca46b2cdeb7fb9e7b19, type: 3}
+  - {fileID: 21300000, guid: b9c7a8ae85b74334cbcf63040d1d12f7, type: 3}
+  - {fileID: 21300000, guid: 28412d10785edb144add2e99be958081, type: 3}
+  - {fileID: 21300000, guid: bb5f62501aadeeb4ab0620adcb5e5c14, type: 3}
+  legs:
+  - {fileID: 21300000, guid: 8f10560a892aac4459dca44ba7930a27, type: 3}
+  - {fileID: 21300000, guid: 2b1f315581a89ff49b9dc5c71a27bc6d, type: 3}
+--- !u!4 &1264592260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264592258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6829472, y: -4.4149632, z: -13.567432}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302706620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2786,7 +2843,7 @@ GameObject:
   - component: {fileID: 1305409175}
   - component: {fileID: 1305409174}
   m_Layer: 0
-  m_Name: GameLogic
+  m_Name: RobotAnalyser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3533,12 +3590,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   robotPrefab: {fileID: 3020599948326498764, guid: 74140bd86337b9e40a2aa1b6b3712d7b,
     type: 3}
-  heads:
-  - {fileID: 4382840644412376549, guid: 8c9b0d8fd96d3f440880b708dd3ce4d8, type: 3}
-  arms:
-  - {fileID: 7946800199636164959, guid: d56acf18d12413541b878261cd545a18, type: 3}
-  legs:
-  - {fileID: 5918620613789267109, guid: cc504c778c15ad743a4fec2ecfe7f8be, type: 3}
+  head: {fileID: 4382840644412376549, guid: 8c9b0d8fd96d3f440880b708dd3ce4d8, type: 3}
+  arm: {fileID: 7946800199636164959, guid: d56acf18d12413541b878261cd545a18, type: 3}
+  leg: {fileID: 5918620613789267109, guid: cc504c778c15ad743a4fec2ecfe7f8be, type: 3}
   probabilityOfFillingSlot: 0.3
   minMaxRequiredStats: {x: 3, y: 9}
   conveyorController: {fileID: 395384728}
