@@ -60,14 +60,11 @@ public class Slot : MonoBehaviour
     public bool CheckEntry(BodyPart bodyPart)
     {
         Vector3 position = bodyPart.transform.position;
-        print("checkEntry "+_isFree);
         if (_isFree)
         {
-            print("free");
 
             if (bodyPart.item.GetType() == _requiredItemType)
             {
-                print("type match");
 
                 return true;
             }

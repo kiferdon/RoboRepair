@@ -22,7 +22,6 @@ public class SlotChooser : MonoBehaviour {
         if(Physics2D.GetRayIntersectionNonAlloc(_camera.ScreenPointToRay(Input.mousePosition)
                , _results, Mathf.Infinity, _slotLayerNumber) != 0)
             {
-                print("raycast");
                 for (int i = 0; i < _results.Length; i++)
                 {
                     var slot = _results[i].transform.GetComponent<Slot>();

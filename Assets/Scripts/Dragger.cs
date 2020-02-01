@@ -31,7 +31,6 @@ public class Dragger : MonoBehaviour {
                 , results, Mathf.Infinity, _bodyPartLayer) != 0) {
             BodyPart bodyPart;
             for (int i = 0; i < results.Length; ++i) {
-                print(results[i].transform.gameObject.name);
                 bodyPart = results[i].transform.gameObject.GetComponent<BodyPart>();
                 if (bodyPart.Slot == null) {
                     itemEvent?.Invoke(bodyPart.item);
@@ -59,7 +58,6 @@ public class Dragger : MonoBehaviour {
 
     private void EndDrag() {
         if (objectIsSelected) {
-            print("end drag");
             objectIsSelected = false;
             slotChooser.ChooseSlot(selectedObject);
             selectedObject = null;
