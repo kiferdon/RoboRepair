@@ -77,7 +77,9 @@ namespace Inventory {
 
         public void RemoveItem(Item item) {
             _items.Remove(item);
-            _cells.Push(item.transform.position);
+            var itemTransform = item.transform;
+            itemTransform.localScale = new Vector3(1, 1, 1);
+            _cells.Push(itemTransform.position);
         }
     }
 }
