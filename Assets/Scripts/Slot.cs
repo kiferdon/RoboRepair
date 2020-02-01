@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    public event Action<Robot.Characteristics> ItemAddEvent, ItemRemoveEvent;
+    public event Action<Characteristics> ItemAddEvent, ItemRemoveEvent;
     [SerializeField] private SpriteRenderer slotArea;
     [SerializeField] private Item requiredItemPrefab;
     private Type _requiredItemType;
@@ -46,12 +46,12 @@ public class Slot : MonoBehaviour
         OnItemRemove(bodyPart.Characteristics);
     }
 
-    protected virtual void OnItemAdd(Robot.Characteristics characteristics)
+    protected virtual void OnItemAdd(Characteristics characteristics)
     {
         ItemAddEvent?.Invoke(characteristics);
     }
 
-    protected virtual void OnItemRemove(Robot.Characteristics characteristics)
+    protected virtual void OnItemRemove(Characteristics characteristics)
     {
         ItemRemoveEvent?.Invoke(characteristics);
     }

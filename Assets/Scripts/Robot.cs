@@ -8,31 +8,12 @@ using Utility;
 
 public class Robot : PoolObject
 {
-    [System.Serializable]
-    public struct Characteristics
-    {
-        public int intelligence, strength, agility;
-        const int MaxCharateristic = 10;
-
-        public void Add(Characteristics characteristics)
-        {
-            intelligence = Mathf.Clamp(intelligence+characteristics.intelligence,0,MaxCharateristic);
-            strength = Mathf.Clamp(strength+characteristics.strength,0,MaxCharateristic);
-            agility = Mathf.Clamp(agility+characteristics.agility,0,MaxCharateristic);
-        }
-
-        public void Subtract(Characteristics characteristics)
-        {
-            intelligence = Mathf.Clamp(intelligence-characteristics.intelligence,0,MaxCharateristic);
-            strength = Mathf.Clamp(strength-characteristics.strength,0,MaxCharateristic);
-            agility = Mathf.Clamp(agility-characteristics.agility,0,MaxCharateristic);
-        }
-    }
-
     private Characteristics _characteristics;
+    public Characteristics Characteristics => _characteristics;
+    private Characteristics _requiredStats;
     [SerializeField] private List<Slot> slots;
     [SerializeField] private TextMeshProUGUI _textMeshProUgui;
-    
+    public event Action<Characteristics,Characteristics> UpdatePoints;
     
     // Start is called before the first frame update
     void Awake()
@@ -47,11 +28,13 @@ public class Robot : PoolObject
     private void OnConnect(Characteristics characteristics)
     {
         _characteristics.Add(characteristics);
+        OnUpdatePoints();
     }
 
     private void OnDisconnect(Characteristics characteristics)
     {
         _characteristics.Subtract(characteristics);
+        OnUpdatePoints();
     }
 
     private void Update()
@@ -61,14 +44,22 @@ public class Robot : PoolObject
         //                                                                 +_characteristics.agility.ToString()+" ";
     }
 
+    
+
     public override void Init()
     {
+        _requiredStats = RoboFactory.Instance.CreateRequiredStats();
         for (int i = 0; i < slots.Count; i++)
         {
             RoboFactory.Instance.GetItemForSlot(slots[i]);
         }
-        print(_characteristics.intelligence.ToString()+" "
-                                                                         +_characteristics.strength.ToString()+" "
-                                                                        +_characteristics.agility.ToString()+" ");
+    }
+
+    protected virtual void OnUpdatePoints()
+    {
+        print(gameObject.name);
+        print("current "+_characteristics.intelligence+_characteristics.strength+_characteristics.agility);
+        print("required "+_requiredStats.intelligence+_requiredStats.strength+_requiredStats.agility);
+        UpdatePoints?.Invoke(_characteristics, _requiredStats);
     }
 }

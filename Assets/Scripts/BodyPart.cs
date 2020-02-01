@@ -7,9 +7,9 @@ using UnityEngine;
 public class BodyPart : MonoBehaviour
 {
     public Item item;
-    private Robot.Characteristics characteristics;
+    private Characteristics characteristics;
 
-    public Robot.Characteristics Characteristics
+    public Characteristics Characteristics
     {
         get
         {
@@ -55,7 +55,6 @@ public class BodyPart : MonoBehaviour
 
     public void Move(Vector3 position)
     {
-        print("moveTOSlot "+targetPosition+" "+transform.position);
         normalPosition = transform.position;
         targetPosition = position;
     }

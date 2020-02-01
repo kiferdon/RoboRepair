@@ -15,6 +15,8 @@ public class RoboFactory : MonoBehaviour
     [SerializeField] private List<BodyPart> arms;
     [SerializeField] private List<BodyPart> legs;
     [SerializeField] private float probabilityOfFillingSlot;
+    [SerializeField] private Vector2Int minMaxRequiredStats;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -49,7 +51,7 @@ public class RoboFactory : MonoBehaviour
         var numberOfRobots = robotPrefab.GetInitialCount();
         for (int i = 0; i < numberOfRobots; i++)
         {
-            ObjectFactory.Instance.GetObject<Robot>(robotPrefab);
+            ObjectFactory.Instance.GetObject<Robot>(robotPrefab).name="Robot "+i;
         }
     }
 
@@ -102,5 +104,16 @@ public class RoboFactory : MonoBehaviour
         {
             slot.Add(CreateLeg());
         }
+    }
+    
+    public Characteristics CreateRequiredStats()
+    {
+        var requiredStats = new Characteristics
+        {
+            agility = Random.Range(minMaxRequiredStats.x, minMaxRequiredStats.y),
+            intelligence = Random.Range(minMaxRequiredStats.x, minMaxRequiredStats.y),
+            strength = Random.Range(minMaxRequiredStats.x, minMaxRequiredStats.y)
+        };
+        return requiredStats;
     }
 }
