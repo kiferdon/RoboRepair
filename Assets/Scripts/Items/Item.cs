@@ -17,5 +17,10 @@ namespace Items {
             dexterityRenderer.sprite = StatGenerator.DigitToSprite(stats.Dexterity);
             intelligenceRenderer.sprite = StatGenerator.DigitToSprite(stats.Intelligence);
         }
+
+        public void ActivateRealForm()
+        {
+            
+        }
     }
 }

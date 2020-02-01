@@ -27,7 +27,11 @@ public class BodyPart : MonoBehaviour
     public Slot Slot
     {
         get => _slot;
-        set => _slot = value;
+        set
+        {
+            _slot = value; 
+            //item.
+        }
     }
 
     // Start is called before the first frame update
@@ -38,18 +42,18 @@ public class BodyPart : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(normalPosition != targetPosition && _movementFlag)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed);
-            if (transform.position == targetPosition)
-            {
-                _movementFlag = false;
-                normalPosition = targetPosition;
-            }
-        }
-    }
+    // void Update()
+    // {
+    //     if(normalPosition != targetPosition && _movementFlag)
+    //     {
+    //         transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed);
+    //         if (transform.position == targetPosition)
+    //         {
+    //             _movementFlag = false;
+    //             normalPosition = targetPosition;
+    //         }
+    //     }
+    // }
     
     public void Drag(Vector3 cursorPos,Vector3 offset)
     {
