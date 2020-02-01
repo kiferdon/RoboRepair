@@ -17,7 +17,7 @@ public class Slot : MonoBehaviour
 
     private bool _isFree;
 
-    private void Start()
+    private void Awake()
     {
         _requiredItemType = requiredItemPrefab.GetType();
         _isFree = true;
@@ -25,14 +25,25 @@ public class Slot : MonoBehaviour
 
     public void Add(BodyPart bodyPart)
     {
+        if (bodyPart == null)
+        {
+            return;
+        }
         _isFree = false;
-        OnItemAdd(bodyPart.characteristics);
+        bodyPart.transform.parent = transform;
+        bodyPart.Slot = this;
+        bodyPart.Move(transform.position);
+        OnItemAdd(bodyPart.Characteristics);
     }
 
     public void Remove(BodyPart bodyPart)
     {
+        if (bodyPart == null)
+        {
+            return;
+        }
         _isFree = true;
-        OnItemRemove(bodyPart.characteristics);
+        OnItemRemove(bodyPart.Characteristics);
     }
 
     protected virtual void OnItemAdd(Robot.Characteristics characteristics)

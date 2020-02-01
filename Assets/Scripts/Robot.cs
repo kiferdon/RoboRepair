@@ -35,7 +35,7 @@ public class Robot : PoolObject
     
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         for (int i = 0; i < slots.Count; i++)
         {
@@ -67,5 +67,8 @@ public class Robot : PoolObject
         {
             RoboFactory.Instance.GetItemForSlot(slots[i]);
         }
+        print(_characteristics.intelligence.ToString()+" "
+                                                                         +_characteristics.strength.ToString()+" "
+                                                                        +_characteristics.agility.ToString()+" ");
     }
 }

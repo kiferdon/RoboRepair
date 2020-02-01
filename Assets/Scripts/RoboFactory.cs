@@ -29,6 +29,18 @@ public class RoboFactory : MonoBehaviour
 
     private void Start()
     {
+        // for (int i = 0; i < heads.Count; i++)
+        // {
+        //     heads[i] = Instantiate(heads[i]);
+        // }
+        // for (int i = 0; i < arms.Count; i++)
+        // {
+        //     arms[i] = Instantiate(arms[i]);
+        // }
+        // for (int i = 0; i < legs.Count; i++)
+        // {
+        //     legs[i] = Instantiate(legs[i]);
+        // }
         GenerateRobots();
     }
 
@@ -48,8 +60,9 @@ public class RoboFactory : MonoBehaviour
             return null;
         }
         var randomItemNumber = Random.Range(0, heads.Count);
-        return heads[randomItemNumber];
-    }
+        BodyPart bodyPart = Instantiate(heads[randomItemNumber]);
+        bodyPart.item.stats = StatGenerator.Stats;
+        return bodyPart;    }
     
     private BodyPart CreateArm()
     {
@@ -58,8 +71,10 @@ public class RoboFactory : MonoBehaviour
             return null;
         }
         var randomItemNumber = Random.Range(0, arms.Count);
-        arms[randomItemNumber].item.stats = StatGenerator.Stats;
-        return arms[randomItemNumber];
+        BodyPart bodyPart = Instantiate(arms[randomItemNumber]);
+        bodyPart.item.stats = StatGenerator.Stats;
+        //print(bodyPart.item.stats.Dexterity+" "+bodyPart.item.stats.Strength+" "+bodyPart.item.stats.Intelligence);
+        return bodyPart;
     }
     
     private BodyPart CreateLeg()
@@ -69,12 +84,12 @@ public class RoboFactory : MonoBehaviour
             return null;
         }
         var randomItemNumber = Random.Range(0, legs.Count);
-        return legs[randomItemNumber];
-    }
+        BodyPart bodyPart = Instantiate(legs[randomItemNumber]);
+        bodyPart.item.stats = StatGenerator.Stats;
+        return bodyPart;    }
 
     public void GetItemForSlot(Slot slot)
     {
-        
         if (slot.RequiredItemType == typeof(HeadItem))
         {
             slot.Add(CreateHead());

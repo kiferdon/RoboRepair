@@ -2243,7 +2243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1798673859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2257,9 +2257,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robotPrefab: {fileID: 3020599948895817629}
-  heads: []
-  arms: []
-  legs: []
+  heads:
+  - {fileID: 4382840644412376549, guid: 8c9b0d8fd96d3f440880b708dd3ce4d8, type: 3}
+  arms:
+  - {fileID: 7946800199636164959, guid: d56acf18d12413541b878261cd545a18, type: 3}
+  legs:
+  - {fileID: 5918620613789267109, guid: cc504c778c15ad743a4fec2ecfe7f8be, type: 3}
   probabilityOfFillingSlot: 0.3
 --- !u!4 &1798673860
 Transform:

@@ -23,9 +23,9 @@ public class SlotChooser : MonoBehaviour {
         if (chosenSlotNumber != -1) {
             GameManager.Instance.PlayAttach();
             slots[chosenSlotNumber].Add(itemForSlot);
-            itemForSlot.item.transform.parent = slots[chosenSlotNumber].transform;
-            itemForSlot.Slot = slots[chosenSlotNumber];
-            itemForSlot.Move(slots[chosenSlotNumber].transform.position);
+            //itemForSlot.item.transform.parent = slots[chosenSlotNumber].transform;
+            //itemForSlot.Slot = slots[chosenSlotNumber];
+            //itemForSlot.Move(slots[chosenSlotNumber].transform.position);
         }
         else {
             GameManager.Instance.PlayWrong();
