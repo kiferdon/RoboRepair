@@ -16,6 +16,8 @@ public class RoboFactory : MonoBehaviour
     [SerializeField] private List<BodyPart> legs;
     [SerializeField] private float probabilityOfFillingSlot;
     [SerializeField] private Vector2Int minMaxRequiredStats;
+    [SerializeField] private List<Conveyor> conveyor;
+    
     
     private void Awake()
     {
@@ -31,18 +33,6 @@ public class RoboFactory : MonoBehaviour
 
     private void Start()
     {
-        // for (int i = 0; i < heads.Count; i++)
-        // {
-        //     heads[i] = Instantiate(heads[i]);
-        // }
-        // for (int i = 0; i < arms.Count; i++)
-        // {
-        //     arms[i] = Instantiate(arms[i]);
-        // }
-        // for (int i = 0; i < legs.Count; i++)
-        // {
-        //     legs[i] = Instantiate(legs[i]);
-        // }
         GenerateRobots();
     }
 
@@ -51,7 +41,9 @@ public class RoboFactory : MonoBehaviour
         var numberOfRobots = robotPrefab.GetInitialCount();
         for (int i = 0; i < numberOfRobots; i++)
         {
-            ObjectFactory.Instance.GetObject<Robot>(robotPrefab).name="Robot "+i;
+            var robot = ObjectFactory.Instance.GetObject<Robot>(robotPrefab);
+            robot.name = "Robot " + i;
+            robot.transform.position = (Vector3.left*(15f) +Vector3.right * (i * 10));
         }
     }
 

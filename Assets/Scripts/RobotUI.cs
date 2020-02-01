@@ -27,7 +27,6 @@ public class RobotUI : MonoBehaviour
 
     private void UpdateRobotUI(Characteristics characteristics,Characteristics required)
     { 
-        print("Update ui");
         DisplayBar(characteristics.intelligence,required.intelligence,0);
         DisplayBar(characteristics.strength,required.strength,1);
         DisplayBar(characteristics.agility,required.agility,2);
@@ -36,7 +35,6 @@ public class RobotUI : MonoBehaviour
 
     private void DisplayBar(int current,int required,int barNumber)
     {
-        print("display "+current+" "+required+" "+barNumber);
         if (current <= required)
         {
             for (int i = 0; i < current; ++i)

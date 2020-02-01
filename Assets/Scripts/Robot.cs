@@ -57,9 +57,6 @@ public class Robot : PoolObject
 
     protected virtual void OnUpdatePoints()
     {
-        print(gameObject.name);
-        print("current "+_characteristics.intelligence+_characteristics.strength+_characteristics.agility);
-        print("required "+_requiredStats.intelligence+_requiredStats.strength+_requiredStats.agility);
         UpdatePoints?.Invoke(_characteristics, _requiredStats);
     }
 }
