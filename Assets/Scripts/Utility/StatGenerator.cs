@@ -15,10 +15,12 @@ namespace Utility {
         public Color intelligenceColor;
 
         public static Stats Stats {
-            get {
-                var strength = Random.Range(1, 9);
-                var dexterity = Random.Range(1, 9);
-                var intelligence = Random.Range(1, 9);
+            get
+            {
+                int maxStat=6;
+                var strength = Random.Range(1, maxStat);
+                var dexterity = Random.Range(1, maxStat);
+                var intelligence = Random.Range(1, maxStat);
                 return new Stats(dexterity, strength, intelligence);
             }
         }

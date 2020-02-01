@@ -47,6 +47,7 @@ public class Robot : PoolObject
         {
             RoboFactory.Instance.GetItemForSlot(slots[i]);
         }
+        UpdatePoints?.Invoke(_characteristics, _requiredStats);
     }
 
     protected virtual void OnUpdatePoints()
