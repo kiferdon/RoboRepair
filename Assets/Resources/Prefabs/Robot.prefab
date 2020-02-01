@@ -3943,6 +3943,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5578888322890019900, guid: d56acf18d12413541b878261cd545a18,
         type: 3}
+    - target: {fileID: 2362295135229738907, guid: 11fbe33264bdffa4b9681b0bd1492394,
+        type: 3}
+      propertyPath: yRotation
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11fbe33264bdffa4b9681b0bd1492394, type: 3}
 --- !u!4 &658613300216387869 stripped
@@ -4301,6 +4306,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7746926671995783463, guid: cc504c778c15ad743a4fec2ecfe7f8be,
         type: 3}
+    - target: {fileID: 2362295135229738907, guid: 11fbe33264bdffa4b9681b0bd1492394,
+        type: 3}
+      propertyPath: yRotation
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11fbe33264bdffa4b9681b0bd1492394, type: 3}
 --- !u!4 &658613299914026943 stripped

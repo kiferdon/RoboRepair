@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Items;
+using UnityEditor;
 using UnityEngine;
 
 public class Slot : MonoBehaviour
@@ -10,6 +11,7 @@ public class Slot : MonoBehaviour
     [SerializeField] private SpriteRenderer slotArea;
     [SerializeField] private Item requiredItemPrefab;
     private Type _requiredItemType;
+    public float yRotation;
 
     public Type RequiredItemType => _requiredItemType;
 

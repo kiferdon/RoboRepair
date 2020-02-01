@@ -18,15 +18,17 @@ namespace Items {
             intelligenceRenderer.sprite = StatGenerator.DigitToSprite(stats.Intelligence);
         }
 
-        public void EnableRealSprite()
+        public void EnableRealSprite(float yRotation)
         {
             realSprite.gameObject.SetActive(true);
+            realSprite.transform.Rotate(Vector3.up*yRotation,Space.Self);
             frontRenderer.gameObject.SetActive(false);
         }
 
         public void DisableRealSprite()
         {
             realSprite.gameObject.SetActive(false);
+            realSprite.transform.localRotation = Quaternion.Euler(Vector3.zero);
             frontRenderer.gameObject.SetActive(true);
 
         }

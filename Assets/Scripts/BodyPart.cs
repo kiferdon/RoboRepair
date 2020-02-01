@@ -32,12 +32,11 @@ public class BodyPart : MonoBehaviour
             _slot = value;
             if (value)
             {
-                item.EnableRealSprite();
+                item.EnableRealSprite(value.yRotation);
             }
             else
             {
                 item.DisableRealSprite();
-
             }
         }
     }
