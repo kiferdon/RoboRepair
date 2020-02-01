@@ -10,6 +10,7 @@ public class RobotAnalyser : MonoBehaviour
     public static RobotAnalyser Instance;
     [SerializeField] private IntVariable winPoints;
     [FormerlySerializedAs("checkPointTrigger")] [SerializeField] private TurnPoint turnPointTrigger;
+    [SerializeField] private int pointsOnStart;
     
     
     private void Awake()
@@ -27,6 +28,7 @@ public class RobotAnalyser : MonoBehaviour
     private void Start()
     {
         turnPointTrigger.EventOnCheckPoint += AnalyseRobot;
+        winPoints.value = pointsOnStart;
     }
 
     public void AnalyseRobot(Robot robot)
