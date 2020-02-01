@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects.Variables;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RobotAnalyser : MonoBehaviour
 {
     public static RobotAnalyser Instance;
     [SerializeField] private IntVariable winPoints;
-    [SerializeField] private CheckPoint checkPointTrigger;
+    [FormerlySerializedAs("checkPointTrigger")] [SerializeField] private TurnPoint turnPointTrigger;
     
     
     private void Awake()
@@ -25,7 +26,7 @@ public class RobotAnalyser : MonoBehaviour
 
     private void Start()
     {
-        checkPointTrigger.EventOnCheckPoint += AnalyseRobot;
+        turnPointTrigger.EventOnCheckPoint += AnalyseRobot;
     }
 
     public void AnalyseRobot(Robot robot)

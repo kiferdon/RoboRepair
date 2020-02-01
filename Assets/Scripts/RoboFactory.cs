@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Conveyors;
 using Items;
 using UnityEngine;
 using Utility;
@@ -16,9 +17,10 @@ public class RoboFactory : MonoBehaviour
     [SerializeField] private List<BodyPart> legs;
     [SerializeField] private float probabilityOfFillingSlot;
     [SerializeField] private Vector2Int minMaxRequiredStats;
-    [SerializeField] private List<Conveyor> conveyor;
+    [SerializeField] private ConveyorController conveyorController;
+    [SerializeField] private SpawnNewRobot spawnTrigger;
     
-    
+
     private void Awake()
     {
         if (Instance == null)
@@ -33,18 +35,14 @@ public class RoboFactory : MonoBehaviour
 
     private void Start()
     {
-        GenerateRobots();
+        GenerateRobot();
+        spawnTrigger.NewRobotEvent += GenerateRobot;
     }
 
-    private void GenerateRobots()
+    private void GenerateRobot()
     {
-        var numberOfRobots = robotPrefab.GetInitialCount();
-        for (int i = 0; i < numberOfRobots; i++)
-        {
-            var robot = ObjectFactory.Instance.GetObject<Robot>(robotPrefab);
-            robot.name = "Robot " + i;
-            robot.transform.position = (Vector3.left*(15f) +Vector3.right * (i * 10));
-        }
+        var robot = ObjectFactory.Instance.GetObject<Robot>(robotPrefab);
+        conveyorController.AddRobot(robot);
     }
 
     private BodyPart CreateHead()

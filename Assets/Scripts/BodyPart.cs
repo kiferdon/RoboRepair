@@ -8,7 +8,6 @@ public class BodyPart : MonoBehaviour
 {
     public Item item;
     private Characteristics characteristics;
-
     public Characteristics Characteristics
     {
         get
@@ -24,7 +23,7 @@ public class BodyPart : MonoBehaviour
     [SerializeField] private float movementSpeed;
     private Slot _slot;
     private bool _movementFlag = false;
-
+    
     public Slot Slot
     {
         get => _slot;
