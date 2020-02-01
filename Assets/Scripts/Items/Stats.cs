@@ -1,7 +1,7 @@
 using UnityEngine;
 
 namespace Items {
-    public class Stats {
+    public struct Stats {
         public int Dexterity { get; }
         public int Strength { get; }
         public int Intelligence { get; }

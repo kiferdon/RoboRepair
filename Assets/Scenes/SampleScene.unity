@@ -1040,7 +1040,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  animationTime: 0.2
+  animationTime: 10
   deltaToAnimate: 0.01
 --- !u!114 &1607671985
 MonoBehaviour:
