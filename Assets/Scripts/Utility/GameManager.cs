@@ -7,6 +7,7 @@ namespace Utility {
         public AudioSource sounds;
         public AudioClip attach;
         public AudioClip detach;
+        public AudioClip wrong;
 
         private void Start() {
             music.Play();
@@ -18,6 +19,10 @@ namespace Utility {
 
         public void PlayDetach() {
             sounds.PlayOneShot(detach);
+        }
+
+        public void PlayWrong() {
+            sounds.PlayOneShot(wrong);
         }
     }
 }
