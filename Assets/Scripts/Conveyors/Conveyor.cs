@@ -9,6 +9,8 @@ public class Conveyor : MonoBehaviour {
     public float animationTime;
     public bool isVertical;
 
+    public float Offset => _offset;
+
     private float _timeForStep;
     private float _timeForAnimation;
 
