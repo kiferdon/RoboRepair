@@ -56,18 +56,16 @@ public class Robot : PoolObject
 
     private void Update()
     {
-        _textMeshProUgui.text = _characteristics.intelligence.ToString()+" "
-                                                                        +_characteristics.strength.ToString()+" "
-                                                                        +_characteristics.agility.ToString()+" ";
+        // _textMeshProUgui.text = _characteristics.intelligence.ToString()+" "
+        //                                                                 +_characteristics.strength.ToString()+" "
+        //                                                                 +_characteristics.agility.ToString()+" ";
     }
 
     public override void Init()
     {
-        GenerateRobot();
-    }
-
-    private void GenerateRobot()
-    {
-        throw new NotImplementedException();
+        for (int i = 0; i < slots.Count; i++)
+        {
+            RoboFactory.Instance.GetItemForSlot(slots[i]);
+        }
     }
 }

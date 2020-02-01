@@ -10,6 +10,11 @@ public class Slot : MonoBehaviour
     [SerializeField] private SpriteRenderer slotArea;
     [SerializeField] private Item requiredItemPrefab;
     private Type _requiredItemType;
+
+    public Type RequiredItemType => _requiredItemType;
+
+    //public Item RequiredItemPrefab => requiredItemPrefab;
+
     private bool _isFree;
 
     private void Start()
