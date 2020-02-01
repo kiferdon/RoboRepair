@@ -28,6 +28,7 @@ public class SlotChooser : MonoBehaviour {
             itemForSlot.Move(slots[chosenSlotNumber].transform.position);
         }
         else {
+            GameManager.Instance.PlayWrong();
             inventoryController.AddItem(itemForSlot.item);
         }
     }
