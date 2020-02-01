@@ -6,7 +6,8 @@ namespace Utility {
     public class ObjectFactory : Singleton<ObjectFactory> {
         private readonly Dictionary<Type, Stack<PoolObject>> _pool = new Dictionary<Type, Stack<PoolObject>>();
 
-        private void Start() {
+        protected override void Awake() {
+            base.Awake();
             var poolObjects = Resources.LoadAll("Prefabs", typeof(PoolObject));
             foreach (var o in poolObjects) {
                 var poolObject = (PoolObject) o;
@@ -24,12 +25,15 @@ namespace Utility {
             var objectPool = _pool[poolObject.GetType()];
             if (objectPool.Count == 0) {
                 Debug.LogWarning("Create additional pool object of type: " + typeof(T));
-                return (T) Instantiate(poolObject.gameObject, parent).GetComponent<PoolObject>();
+                var component = Instantiate(poolObject.gameObject, parent).GetComponent<PoolObject>();
+                component.Init();
+                return (T) component;
             }
 
             var result = objectPool.Pop();
             result.gameObject.SetActive(true);
             result.transform.SetParent(parent);
+            result.Init();
             return (T) result;
         }
 

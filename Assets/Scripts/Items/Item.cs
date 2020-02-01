@@ -9,7 +9,7 @@ namespace Items {
         [SerializeField] protected SpriteRenderer intelligenceRenderer;
         protected Stats stats;
 
-        public void Init() {
+        public override void Init() {
             stats = StatGenerator.Stats;
             backRenderer.sprite = stats.Background;
             strengthRenderer.sprite = StatGenerator.DigitToSprite(stats.Strength);

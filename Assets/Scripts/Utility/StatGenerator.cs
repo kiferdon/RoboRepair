@@ -12,9 +12,9 @@ namespace Utility {
 
         public static Stats Stats {
             get {
-                var strength = Random.Range(0, 9);
-                var dexterity = Random.Range(0, 9);
-                var intelligence = Random.Range(0, 9);
+                var strength = Random.Range(1, 9);
+                var dexterity = Random.Range(1, 9);
+                var intelligence = Random.Range(1, 9);
                 return new Stats(dexterity, strength, intelligence, GetBackground(dexterity, strength, intelligence));
             }
         }
