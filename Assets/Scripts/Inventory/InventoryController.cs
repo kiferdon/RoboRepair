@@ -18,5 +18,10 @@ namespace Inventory {
         public void AddItem(Item item) {
             _tabsByType[item.GetType()].AddItem(item);
         }
+
+        public void RemoveItem(Item item)
+        {
+            _tabsByType[item.GetType()].RemoveItem(item);
+        }
     }
 }

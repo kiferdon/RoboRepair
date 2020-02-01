@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Items;
 using UnityEngine;
 
 public class BodyPart : MonoBehaviour
 {
-    
+    public Item item;
     public Robot.Characteristics characteristics;
     private Vector3 targetPosition, normalPosition;
     [SerializeField] private float movementSpeed;
@@ -21,6 +23,14 @@ public class BodyPart : MonoBehaviour
     {
         normalPosition = transform.position;
         targetPosition = normalPosition;
+    }
+
+    private void Start()
+    {
+        characteristics.agility = item.stats.Dexterity;
+        characteristics.intelligence = item.stats.Intelligence;
+        characteristics.strength = item.stats.Strength;
+
     }
 
     // Update is called once per frame
@@ -41,7 +51,7 @@ public class BodyPart : MonoBehaviour
 
     public void Move(Vector3 position)
     {
-        //print(targetPosition+" "+transform.position);
+        print("moveTOSlot "+targetPosition+" "+transform.position);
         normalPosition = transform.position;
         targetPosition = position;
     }

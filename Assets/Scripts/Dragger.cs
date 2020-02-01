@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Events;
 using UnityEngine;
 
 public class Dragger : MonoBehaviour
@@ -14,7 +15,7 @@ public class Dragger : MonoBehaviour
     [SerializeField] private Camera camera;
     [SerializeField] private float raycastDistance;
     [SerializeField] private SlotChooser slotChooser;
-
+    public UnityItemEvent itemEvent;
 
     // Start is called before the first frame update
     void Awake()
@@ -38,22 +39,18 @@ public class Dragger : MonoBehaviour
                 bodyPart = results[i].transform.gameObject.GetComponent<BodyPart>();
                 if (bodyPart.Slot == null)
                 {
-                    objectIsSelected = true;
-                    startPos = camera.ScreenToWorldPoint(mousePosition);
-                    offset = camera.ScreenToWorldPoint(mousePosition) - results[i].transform.position;
-                    selectedObject = bodyPart;
-                    break;
+                    itemEvent?.Invoke(bodyPart.item);
                 }
                 else
                 {
                     bodyPart.Slot.Remove(bodyPart);
                     bodyPart.Slot = null;
-                    objectIsSelected = true;
-                    startPos = camera.ScreenToWorldPoint(mousePosition);
-                    offset = camera.ScreenToWorldPoint(mousePosition) - results[i].transform.position;
-                    selectedObject = bodyPart;
-                    break;
                 }
+                objectIsSelected = true;
+                startPos = camera.ScreenToWorldPoint(mousePosition);
+                offset = camera.ScreenToWorldPoint(mousePosition) - results[i].transform.position;
+                selectedObject = bodyPart;
+                break;
             }
         }
     }

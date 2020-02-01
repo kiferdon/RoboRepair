@@ -7,6 +7,8 @@ namespace Items {
         public int Intelligence { get; }
         public Sprite Background { get; }
 
+        
+        
         public Stats(int dexterity, int strength, int intelligence, Sprite background) {
             Dexterity = dexterity;
             Strength = strength;

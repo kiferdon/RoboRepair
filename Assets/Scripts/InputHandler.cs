@@ -43,6 +43,7 @@ public class InputHandler : MonoBehaviour
         {
             OnDragEndEvent();
         }
+        
     }
 
     protected virtual void OnDragStartEvent()

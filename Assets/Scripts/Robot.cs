@@ -4,27 +4,28 @@ using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
+using Utility;
 
-public class Robot : MonoBehaviour
+public class Robot : PoolObject
 {
     [System.Serializable]
     public struct Characteristics
     {
-        public int Intelligence, Strength, Agility;
+        public int intelligence, strength, agility;
         const int MaxCharateristic = 10;
 
         public void Add(Characteristics characteristics)
         {
-            Intelligence = Mathf.Clamp(Intelligence+characteristics.Intelligence,0,MaxCharateristic);
-            Strength = Mathf.Clamp(Strength+characteristics.Strength,0,MaxCharateristic);
-            Agility = Mathf.Clamp(Agility+characteristics.Agility,0,MaxCharateristic);
+            intelligence = Mathf.Clamp(intelligence+characteristics.intelligence,0,MaxCharateristic);
+            strength = Mathf.Clamp(strength+characteristics.strength,0,MaxCharateristic);
+            agility = Mathf.Clamp(agility+characteristics.agility,0,MaxCharateristic);
         }
 
         public void Subtract(Characteristics characteristics)
         {
-            Intelligence = Mathf.Clamp(Intelligence-characteristics.Intelligence,0,MaxCharateristic);
-            Strength = Mathf.Clamp(Strength-characteristics.Strength,0,MaxCharateristic);
-            Agility = Mathf.Clamp(Agility-characteristics.Agility,0,MaxCharateristic);
+            intelligence = Mathf.Clamp(intelligence-characteristics.intelligence,0,MaxCharateristic);
+            strength = Mathf.Clamp(strength-characteristics.strength,0,MaxCharateristic);
+            agility = Mathf.Clamp(agility-characteristics.agility,0,MaxCharateristic);
         }
     }
 
@@ -55,8 +56,18 @@ public class Robot : MonoBehaviour
 
     private void Update()
     {
-        _textMeshProUgui.text = _characteristics.Intelligence.ToString()+" "
-                                                                        +_characteristics.Strength.ToString()+" "
-                                                                        +_characteristics.Agility.ToString()+" ";
+        _textMeshProUgui.text = _characteristics.intelligence.ToString()+" "
+                                                                        +_characteristics.strength.ToString()+" "
+                                                                        +_characteristics.agility.ToString()+" ";
+    }
+
+    public override void Init()
+    {
+        GenerateRobot();
+    }
+
+    private void GenerateRobot()
+    {
+        throw new NotImplementedException();
     }
 }

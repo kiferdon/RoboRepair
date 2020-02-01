@@ -7,7 +7,7 @@ namespace Items {
         [SerializeField] protected SpriteRenderer strengthRenderer;
         [SerializeField] protected SpriteRenderer dexterityRenderer;
         [SerializeField] protected SpriteRenderer intelligenceRenderer;
-        protected Stats stats;
+        public Stats stats;
 
         public override void Init() {
             stats = StatGenerator.Stats;
