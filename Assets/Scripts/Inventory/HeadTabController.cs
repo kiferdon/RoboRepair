@@ -1,5 +1,6 @@
 using System;
 using Items;
+using UnityEngine;
 
 namespace Inventory {
     public class HeadTabController : TabController {

@@ -2,20 +2,24 @@ using System;
 using System.Collections.Generic;
 using Items;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Inventory {
-    [RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(SpriteRenderer), typeof(SortingGroup))]
     public abstract class TabController : MonoBehaviour {
         public abstract Type Type { get; }
         public float sizeChangeStep;
         public float intervalKoef = 1.5f;
+        public GameObject items;
         private readonly Stack<Vector2> _cells = new Stack<Vector2>();
         private SpriteRenderer _spriteRenderer;
         private readonly List<Item> _items = new List<Item>();
         private float _currentScale = 1;
+        private SortingGroup _sortingGroup;
 
         private void Awake() {
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _sortingGroup = GetComponent<SortingGroup>();
         }
 
         private void CalculateGrid(Item item) {
@@ -64,7 +68,7 @@ namespace Inventory {
         public void AddItem(Item item) {
             _items.Add(item);
             var itemTransform = item.transform;
-            itemTransform.parent = transform;
+            itemTransform.parent = items.transform;
             itemTransform.localScale = new Vector3(_currentScale, _currentScale);
             if (_cells.Count == 0) {
                 CalculateGrid(item);
@@ -80,6 +84,16 @@ namespace Inventory {
             var itemTransform = item.transform;
             itemTransform.localScale = new Vector3(1, 1, 1);
             _cells.Push(itemTransform.position);
+        }
+
+        public void Select(int order) {
+            _sortingGroup.sortingOrder = order;
+            items.SetActive(true);
+        }
+
+        public void UnSelect(int order) {
+            _sortingGroup.sortingOrder = order;
+            items.SetActive(false);
         }
     }
 }
