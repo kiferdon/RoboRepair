@@ -2651,7 +2651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1798673859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2664,7 +2664,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361def62ed9eb21448b534cc2563c5ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  robotPrefab: {fileID: 0}
+  robotPrefab: {fileID: 3020599948326498764, guid: 74140bd86337b9e40a2aa1b6b3712d7b,
+    type: 3}
   heads:
   - {fileID: 4382840644412376549, guid: 8c9b0d8fd96d3f440880b708dd3ce4d8, type: 3}
   arms:
@@ -2672,7 +2673,8 @@ MonoBehaviour:
   legs:
   - {fileID: 5918620613789267109, guid: cc504c778c15ad743a4fec2ecfe7f8be, type: 3}
   probabilityOfFillingSlot: 0.3
-  minMaxRequiredStats: {x: 0, y: 0}
+  minMaxRequiredStats: {x: 3, y: 9}
+  conveyor: []
 --- !u!4 &1798673860
 Transform:
   m_ObjectHideFlags: 0

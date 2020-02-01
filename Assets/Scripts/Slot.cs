@@ -31,8 +31,9 @@ public class Slot : MonoBehaviour
         }
         _isFree = false;
         bodyPart.transform.parent = transform;
+        bodyPart.transform.localPosition=Vector3.zero;
         bodyPart.Slot = this;
-        bodyPart.Move(transform.position);
+        //bodyPart.Move(transform.position);
         OnItemAdd(bodyPart.Characteristics);
     }
 
@@ -64,18 +65,14 @@ public class Slot : MonoBehaviour
         {
             print("free");
 
-            if (slotArea.bounds.Contains(position))
+            if (bodyPart.item.GetType() == _requiredItemType)
             {
-                print("contains");
+                print("type match");
 
-                if (bodyPart.item.GetType() == _requiredItemType)
-                {
-                    print("type match");
-
-                    return true;
-                }
+                return true;
             }
         }
+
         return false;
     }
 }

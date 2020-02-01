@@ -23,6 +23,7 @@ public class BodyPart : MonoBehaviour
     private Vector3 targetPosition, normalPosition;
     [SerializeField] private float movementSpeed;
     private Slot _slot;
+    private bool _movementFlag = false;
 
     public Slot Slot
     {
@@ -40,10 +41,14 @@ public class BodyPart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(normalPosition != targetPosition)
+        if(normalPosition != targetPosition && _movementFlag)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed);
-            if (transform.position == targetPosition) normalPosition = targetPosition;
+            if (transform.position == targetPosition)
+            {
+                _movementFlag = false;
+                normalPosition = targetPosition;
+            }
         }
     }
     
@@ -55,6 +60,7 @@ public class BodyPart : MonoBehaviour
 
     public void Move(Vector3 position)
     {
+        _movementFlag = true;
         normalPosition = transform.position;
         targetPosition = position;
     }
