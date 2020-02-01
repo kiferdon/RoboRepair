@@ -33,18 +33,6 @@ public class RoboFactory : MonoBehaviour
 
     private void Start()
     {
-        // for (int i = 0; i < heads.Count; i++)
-        // {
-        //     heads[i] = Instantiate(heads[i]);
-        // }
-        // for (int i = 0; i < arms.Count; i++)
-        // {
-        //     arms[i] = Instantiate(arms[i]);
-        // }
-        // for (int i = 0; i < legs.Count; i++)
-        // {
-        //     legs[i] = Instantiate(legs[i]);
-        // }
         GenerateRobots();
     }
 
