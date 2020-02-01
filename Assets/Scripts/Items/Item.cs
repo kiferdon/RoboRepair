@@ -18,9 +18,17 @@ namespace Items {
             intelligenceRenderer.sprite = StatGenerator.DigitToSprite(stats.Intelligence);
         }
 
-        public void ActivateRealForm()
+        public void EnableRealSprite()
         {
-            
+            realSprite.gameObject.SetActive(true);
+            frontRenderer.gameObject.SetActive(false);
+        }
+
+        public void DisableRealSprite()
+        {
+            realSprite.gameObject.SetActive(false);
+            frontRenderer.gameObject.SetActive(true);
+
         }
     }
 }

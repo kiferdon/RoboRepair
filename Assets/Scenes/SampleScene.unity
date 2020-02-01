@@ -2844,6 +2844,10 @@ MonoBehaviour:
   legs:
   - {fileID: 21300000, guid: 8f10560a892aac4459dca44ba7930a27, type: 3}
   - {fileID: 21300000, guid: 2b1f315581a89ff49b9dc5c71a27bc6d, type: 3}
+  - {fileID: 21300000, guid: 8601cacce371d9b4aba448158189ca1d, type: 3}
+  - {fileID: 21300000, guid: 88f23dc86d0349c47ab1dda501ab2518, type: 3}
+  - {fileID: 21300000, guid: a99981104cb1ea44ebdc30683852e5df, type: 3}
+  - {fileID: 21300000, guid: 1469e6b2763a2be41b346ca70b8625fe, type: 3}
 --- !u!4 &1264592260
 Transform:
   m_ObjectHideFlags: 0

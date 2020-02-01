@@ -29,8 +29,16 @@ public class BodyPart : MonoBehaviour
         get => _slot;
         set
         {
-            _slot = value; 
-            //item.
+            _slot = value;
+            if (value)
+            {
+                item.EnableRealSprite();
+            }
+            else
+            {
+                item.DisableRealSprite();
+
+            }
         }
     }
 
