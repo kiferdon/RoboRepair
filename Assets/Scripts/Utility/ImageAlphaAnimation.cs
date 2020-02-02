@@ -14,7 +14,7 @@ namespace Utility {
         }
 
         private void Update() {
-            _time += Time.deltaTime;
+            _time += Time.unscaledDeltaTime;
             var color = _image.color;
             color.a = Mathf.Lerp(0, 1, _time / animationTime);
             _image.color = color;

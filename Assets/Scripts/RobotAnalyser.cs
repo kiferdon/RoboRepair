@@ -6,37 +6,43 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Utility;
 
-public class RobotAnalyser : MonoBehaviour
-{
+public class RobotAnalyser : MonoBehaviour {
     public static RobotAnalyser Instance;
     [SerializeField] private IntVariable winPoints;
-    [FormerlySerializedAs("checkPointTrigger")] [SerializeField] private TurnPoint turnPointTrigger;
+
+    [FormerlySerializedAs("checkPointTrigger")] [SerializeField]
+    private TurnPoint turnPointTrigger;
+
     [SerializeField] private int pointsOnStart;
-    
-    
-    private void Awake()
-    {
-        if (Instance == null)
-        {
+
+
+    private void Awake() {
+        if (Instance == null) {
             Instance = this;
         }
-        else
-        {
+        else {
             Destroy(gameObject);
         }
     }
 
-    private void Start()
-    {
+    private void Start() {
         turnPointTrigger.EventOnCheckPoint += AnalyseRobot;
         winPoints.value = pointsOnStart;
     }
 
-    public void AnalyseRobot(Robot robot)
-    {
+    public void AnalyseRobot(Robot robot) {
+        var before = winPoints.value;
         winPoints.value += (robot.Characteristics.intelligence - robot.RequiredStats.intelligence);
         winPoints.value += (robot.Characteristics.agility - robot.RequiredStats.agility);
         winPoints.value += (robot.Characteristics.strength - robot.RequiredStats.strength);
+
+        if (winPoints.value >= before) {
+            GameManager.Instance.PlayGood();
+        }
+        else {
+            GameManager.Instance.PlayBad();
+        }
+
         if (winPoints.value <= 0) {
             GameManager.Instance.Lose();
         }
