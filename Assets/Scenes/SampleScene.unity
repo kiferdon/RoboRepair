@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
-  timeStep: 2.5
+  timeStep: 3
   from: {fileID: 1302706621}
   curve:
     serializedVersion: 2
@@ -341,7 +341,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  animationTime: 0.8
+  animationTime: 1.2
   isVertical: 0
 --- !u!1 &91584399
 GameObject:
@@ -1243,7 +1243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
-  timeStep: 2.5
+  timeStep: 3
   from: {fileID: 66475097}
   curve:
     serializedVersion: 2
@@ -1287,7 +1287,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  animationTime: 0.8
+  animationTime: 1.2
   isVertical: 0
 --- !u!212 &401016781
 SpriteRenderer:
@@ -2394,7 +2394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566530859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.61, y: 4, z: 0}
+  m_LocalPosition: {x: -27.45, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 395384727}
@@ -4489,7 +4489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
-  timeStep: 2.5
+  timeStep: 3
   from: {fileID: 401016779}
   curve:
     serializedVersion: 2
@@ -4533,7 +4533,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  animationTime: 0.8
+  animationTime: 1.2
   isVertical: 0
 --- !u!1 &1305409173
 GameObject:
