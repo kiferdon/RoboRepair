@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
-  timeStep: 3
+  timeStep: 4
   from: {fileID: 1302706621}
   curve:
     serializedVersion: 2
@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
-  timeStep: 3
+  timeStep: 4
   from: {fileID: 66475097}
   curve:
     serializedVersion: 2
@@ -2916,7 +2916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeChangeStep: 0.1
-  intervalKoef: 2
+  intervalKoef: 1.5
   items: {fileID: 966929885}
   panel: {fileID: 1036544130}
 --- !u!1 &605584467
@@ -3645,7 +3645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeChangeStep: 0.1
-  intervalKoef: 2
+  intervalKoef: 1.5
   items: {fileID: 751138064}
   panel: {fileID: 416693837}
 --- !u!1 &824393960
@@ -4143,7 +4143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeChangeStep: 0.1
-  intervalKoef: 2
+  intervalKoef: 1.5
   items: {fileID: 266310505}
   panel: {fileID: 833740996}
 --- !u!1 &928337149
@@ -5111,7 +5111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
-  timeStep: 3
+  timeStep: 4
   from: {fileID: 401016779}
   curve:
     serializedVersion: 2
@@ -5958,7 +5958,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.6
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}

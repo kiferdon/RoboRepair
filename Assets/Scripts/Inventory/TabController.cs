@@ -25,7 +25,7 @@ namespace Inventory {
             int xCount, yCount, totalCount;
             var spriteRendererBounds = panel.bounds;
             //Get inventory size without pin offset
-            var inventorySize = new Vector2(spriteRendererBounds.size.x, spriteRendererBounds.size.y - 1.5f);
+            var inventorySize = new Vector2(spriteRendererBounds.size.x, spriteRendererBounds.size.y);
             var cellSize = item.backRenderer.bounds.size;
             do {
                 xCount = (int) ((inventorySize.x - cellSize.x * intervalKoef / 2) / (cellSize.x * intervalKoef));
@@ -57,6 +57,7 @@ namespace Inventory {
         }
 
         private void ResetGrid() {
+            _items.Sort();
             foreach (var item in _items) {
                 var itemTransform = item.transform;
                 itemTransform.localScale = new Vector3(_currentScale, _currentScale);
@@ -69,13 +70,8 @@ namespace Inventory {
             var itemTransform = item.transform;
             itemTransform.parent = items.transform;
             itemTransform.localScale = new Vector3(_currentScale, _currentScale);
-            if (_cells.Count == 0) {
-                CalculateGrid(item);
-                ResetGrid();
-            }
-            else {
-                itemTransform.position = _cells.Pop();
-            }
+            CalculateGrid(item);
+            ResetGrid();
         }
 
         public void RemoveItem(Item item) {
