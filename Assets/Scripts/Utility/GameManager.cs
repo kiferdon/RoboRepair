@@ -10,6 +10,11 @@ namespace Utility {
         public AudioClip attach;
         public AudioClip detach;
         public AudioClip wrong;
+        public AudioClip win;
+        public AudioClip lose;
+        public AudioClip good;
+        public AudioClip bad;
+        public AudioClip hammerPress;
         [Header("Pause")] public GameObject pausePanel;
         public GameObject winPanel;
         public GameObject losePanel;
@@ -59,15 +64,32 @@ namespace Utility {
 
         public void Win() {
             _isEnded = true;
+            music.Stop();
+            sounds.PlayOneShot(win);
             winPanel.SetActive(true);
             Time.timeScale = 0;
         }
 
         public void Lose() {
             _isEnded = true;
+            music.Stop();
+            sounds.PlayOneShot(lose);
             losePanel.SetActive(true);
             Time.timeScale = 0;
         }
+
+        public void PlayGood() {
+            sounds.PlayOneShot(good);
+        }
+
+        public void PlayBad() {
+            sounds.PlayOneShot(bad);
+        }
+
+        public void PlayHammer() {
+            sounds.PlayOneShot(hammerPress);
+        }
+
 
         public void Restart() {
             if (_isEnded) {
