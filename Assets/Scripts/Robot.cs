@@ -25,6 +25,7 @@ public class Robot : PoolObject
         {
             slots[i].ItemAddEvent += OnConnect;
             slots[i].ItemRemoveEvent += OnDisconnect;
+            slots[i].Init();
         }
     }
 

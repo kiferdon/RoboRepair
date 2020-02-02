@@ -27,6 +27,21 @@ public class Slot : MonoBehaviour
         _itemPlacer = GetComponent<SpriteRenderer>();
     }
 
+    public void Init()
+    {
+        if (_bodyPart != null)
+        {
+            Destroy(_bodyPart);
+            _bodyPart = null;
+        }
+
+        if (_itemPlacer)
+        {
+            _itemPlacer.enabled = true;
+
+        }
+    }
+
     public void Add(BodyPart bodyPart)
     {
         if (bodyPart == null)
@@ -73,7 +88,6 @@ public class Slot : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 
