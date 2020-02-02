@@ -16,6 +16,7 @@ MonoBehaviour:
   frontRenderer: {fileID: 7238581134368396963}
   backRenderer: {fileID: 7238581135596155742}
   realSprite: {fileID: 9198674911921190475}
+  shadowSprite: {fileID: 4463515740196893391}
   strengthRenderer: {fileID: 4539330959973221065}
   dexterityRenderer: {fileID: 4539330959939136772}
   intelligenceRenderer: {fileID: 4539330960825983792}
@@ -105,15 +106,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7100255371065552605}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &7238581135596155742 stripped
+--- !u!212 &4463515740196893391 stripped
 SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 503760583240621443, guid: d8702242ee591974cbaf740540317f41,
+  m_CorrespondingSourceObject: {fileID: 6879454377059752978, guid: d8702242ee591974cbaf740540317f41,
     type: 3}
   m_PrefabInstance: {fileID: 7100255371065552605}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &7238581134368396963 stripped
+--- !u!212 &7238581135596155742 stripped
 SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 503760581786122366, guid: d8702242ee591974cbaf740540317f41,
+  m_CorrespondingSourceObject: {fileID: 503760583240621443, guid: d8702242ee591974cbaf740540317f41,
     type: 3}
   m_PrefabInstance: {fileID: 7100255371065552605}
   m_PrefabAsset: {fileID: 0}
@@ -132,6 +133,12 @@ SpriteRenderer:
 --- !u!212 &4539330960825983792 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6663038065501326829, guid: d8702242ee591974cbaf740540317f41,
+    type: 3}
+  m_PrefabInstance: {fileID: 7100255371065552605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7238581134368396963 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 503760581786122366, guid: d8702242ee591974cbaf740540317f41,
     type: 3}
   m_PrefabInstance: {fileID: 7100255371065552605}
   m_PrefabAsset: {fileID: 0}

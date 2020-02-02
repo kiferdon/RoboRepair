@@ -2977,7 +2977,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824393960}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -4144,9 +4144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heads:
-  - {fileID: 21300000, guid: 95ec22962785aff4bb67402cf5151cc3, type: 3}
-  - {fileID: 21300000, guid: e90dfda94eefff449aa33264f492c0ea, type: 3}
   - {fileID: 21300000, guid: caa48bde8d295894288db1668c43a96f, type: 3}
+  - {fileID: 21300000, guid: e90dfda94eefff449aa33264f492c0ea, type: 3}
+  - {fileID: 21300000, guid: 95ec22962785aff4bb67402cf5151cc3, type: 3}
   arms:
   - {fileID: 21300000, guid: 6e04e605502bfae41bc32e48dc3b71e6, type: 3}
   - {fileID: 21300000, guid: b670ec17f67fbca46b2cdeb7fb9e7b19, type: 3}
@@ -4155,6 +4155,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8f10560a892aac4459dca44ba7930a27, type: 3}
   - {fileID: 21300000, guid: 8601cacce371d9b4aba448158189ca1d, type: 3}
   - {fileID: 21300000, guid: a99981104cb1ea44ebdc30683852e5df, type: 3}
+  shadowHeads:
+  - {fileID: 21300000, guid: 5aa8f84dd9aaec2419195014ef6a82ee, type: 3}
+  - {fileID: 21300000, guid: 5bdd843c8452204478e1c9499ba016ae, type: 3}
+  - {fileID: 21300000, guid: 711d890b72ab677468339ebfb4532a19, type: 3}
+  shadowArms:
+  - {fileID: 21300000, guid: c0df9c6d4e778e1459679f453709a6d8, type: 3}
+  - {fileID: 21300000, guid: eee95631dc23e1d4bbd7111772421aeb, type: 3}
+  - {fileID: 21300000, guid: e979e101440ffea45a9e98b9081ff160, type: 3}
+  shadowLegs:
+  - {fileID: 21300000, guid: 79737f0297679e847b385329ba53df2a, type: 3}
+  - {fileID: 21300000, guid: 3efcdc77ebf37ce458abaeba69d332d5, type: 3}
+  - {fileID: 21300000, guid: e4d1498a2ad8a1c4fa1b0aef4024be7a, type: 3}
 --- !u!4 &1264592260
 Transform:
   m_ObjectHideFlags: 0

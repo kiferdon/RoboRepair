@@ -16,6 +16,7 @@ MonoBehaviour:
   frontRenderer: {fileID: 6349800093414638425}
   backRenderer: {fileID: 6349800092100912804}
   realSprite: {fileID: 4882989013440111537}
+  shadowSprite: {fileID: 115414983053633333}
   strengthRenderer: {fileID: 186177896036210483}
   dexterityRenderer: {fileID: 186177896006383870}
   intelligenceRenderer: {fileID: 186177895135229642}
@@ -143,6 +144,12 @@ SpriteRenderer:
 --- !u!212 &4882989013440111537 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2099080657878112406, guid: d8702242ee591974cbaf740540317f41,
+    type: 3}
+  m_PrefabInstance: {fileID: 6837223027622312743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &115414983053633333 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6879454377059752978, guid: d8702242ee591974cbaf740540317f41,
     type: 3}
   m_PrefabInstance: {fileID: 6837223027622312743}
   m_PrefabAsset: {fileID: 0}
