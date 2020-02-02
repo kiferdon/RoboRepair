@@ -31,7 +31,7 @@ namespace UI {
 
             _bar.fillAmount = Mathf.Lerp(_bar.fillAmount,
                 newValue, curve.Evaluate(_time / animationTime));
-            _bar.color = Color.Lerp(minColor, maxColor, _bar.fillAmount);
+            //_bar.color = Color.Lerp(minColor, maxColor, _bar.fillAmount);
         }
     }
 }

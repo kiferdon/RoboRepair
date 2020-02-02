@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using ScriptableObjects.Variables;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Utility;
 
 public class RobotAnalyser : MonoBehaviour
 {
@@ -36,5 +37,8 @@ public class RobotAnalyser : MonoBehaviour
         winPoints.value += (robot.Characteristics.intelligence - robot.RequiredStats.intelligence);
         winPoints.value += (robot.Characteristics.agility - robot.RequiredStats.agility);
         winPoints.value += (robot.Characteristics.strength - robot.RequiredStats.strength);
+        if (winPoints.value <= 0) {
+            GameManager.Instance.Lose();
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Events;
 using UnityEngine;
 using UnityEngine.Events;
+using Utility;
 
 public class InputHandler : MonoBehaviour {
     RaycastHit2D[] results;
@@ -45,6 +46,14 @@ public class InputHandler : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Alpha3)) {
             keyCodeEvent?.Invoke(KeyCode.Alpha3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            GameManager.Instance.Pause();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R)) {
+            GameManager.Instance.Restart();
         }
     }
 
