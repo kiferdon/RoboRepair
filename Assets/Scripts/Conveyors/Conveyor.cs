@@ -21,6 +21,7 @@ public class Conveyor : MonoBehaviour {
     private void Awake() {
         _startPosition = _targetPosition = transform.position;
         _offset = from.GetComponent<SpriteRenderer>().size.x;
+        if (!isVertical) _timeForStep = timeStep;
     }
 
     private void Update() {

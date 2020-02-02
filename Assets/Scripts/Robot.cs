@@ -62,10 +62,15 @@ public class Robot : PoolObject
     public void Build()
     {
         changeBody.ChangeBodyToReal();
-        tablo.HideTablo();
         for (int i = 0; i < slots.Count; i++)
         {
             slots[i].Build();
         }
+    }
+
+    public void HideTablo()
+    {
+        print("hide tablo");
+        tablo.HideTablo();
     }
 }

@@ -34,10 +34,38 @@ public class RobotAnalyser : MonoBehaviour
 
     public void AnalyseRobot(Robot robot)
     {
-        winPoints.value += (robot.Characteristics.intelligence - robot.RequiredStats.intelligence);
-        winPoints.value += (robot.Characteristics.agility - robot.RequiredStats.agility);
-        winPoints.value += (robot.Characteristics.strength - robot.RequiredStats.strength);
-        if (winPoints.value <= 0) {
+        if (robot.Characteristics.intelligence < robot.RequiredStats.intelligence)
+        {
+            winPoints.value -= (robot.RequiredStats.intelligence - robot.Characteristics.intelligence) * 2;
+        }
+        else
+        {
+            winPoints.value += (robot.Characteristics.intelligence - robot.RequiredStats.intelligence);
+
+        }
+
+        if (robot.Characteristics.agility < robot.RequiredStats.agility)
+        {
+            winPoints.value -= (robot.RequiredStats.agility - robot.Characteristics.agility) * 2;
+        }
+        else
+        {
+            winPoints.value += (robot.Characteristics.agility - robot.RequiredStats.agility);
+
+        }
+
+        if (robot.Characteristics.strength < robot.RequiredStats.strength)
+        {
+            winPoints.value -= (robot.RequiredStats.strength - robot.Characteristics.strength) * 2;
+        }
+        else
+        {
+            winPoints.value += (robot.Characteristics.strength - robot.RequiredStats.strength);
+
+        }
+
+        if (winPoints.value <= 0)
+        {
             GameManager.Instance.Lose();
         }
     }
