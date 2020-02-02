@@ -25,7 +25,6 @@ public class Robot : PoolObject
         {
             slots[i].ItemAddEvent += OnConnect;
             slots[i].ItemRemoveEvent += OnDisconnect;
-            slots[i].Init();
         }
     }
 
@@ -46,6 +45,7 @@ public class Robot : PoolObject
         _requiredStats = RoboFactory.Instance.CreateRequiredStats();
         for (int i = 0; i < slots.Count; i++)
         {
+            slots[i].Init();
             RoboFactory.Instance.GetItemForSlot(slots[i]);
         }
         UpdatePoints?.Invoke(_characteristics, _requiredStats);
