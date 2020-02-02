@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -45,6 +45,9 @@ public class Robot : PoolObject
     public override void Init()
     {
         _requiredStats = RoboFactory.Instance.CreateRequiredStats();
+        _characteristics.agility = 0;
+        _characteristics.strength = 0;
+        _characteristics.intelligence = 0;
         for (int i = 0; i < slots.Count; i++)
         {
             slots[i].Init();
