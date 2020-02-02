@@ -17,7 +17,7 @@ namespace Utility {
         private bool _isEnded;
 
         private void Start() {
-            music.Play();
+            Time.timeScale = 0;
         }
 
         public void PlayAttach() {
@@ -43,6 +43,11 @@ namespace Utility {
             }
         }
 
+        public void StartGame() {
+            music.Play();
+            Time.timeScale = 1;
+        }
+
         public void SetSound(float value) {
             sounds.volume = value;
             sounds.PlayOneShot(attach);
@@ -55,11 +60,13 @@ namespace Utility {
         public void Win() {
             _isEnded = true;
             winPanel.SetActive(true);
+            Time.timeScale = 0;
         }
 
         public void Lose() {
             _isEnded = true;
             losePanel.SetActive(true);
+            Time.timeScale = 0;
         }
 
         public void Restart() {
