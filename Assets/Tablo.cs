@@ -3,24 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tablo : MonoBehaviour
-{
+public class Tablo : MonoBehaviour {
     private Animator animator;
     private static readonly int push = Animator.StringToHash("Push");
 
-    private void Awake()
-    {
+    private void Awake() {
         animator = GetComponent<Animator>();
     }
 
-    public void HideTablo()
-    {
+    public void HideTablo() {
         animator.SetTrigger(push);
-        
     }
 
-    private void OnDisable()
-    {
+    private void OnEnable() {
         animator.ResetTrigger(push);
     }
 }
