@@ -18,8 +18,6 @@ public class BodyPart : MonoBehaviour
             return characteristics;
         }
     }
-
-    private Vector3 targetPosition, normalPosition;
     [SerializeField] private float movementSpeed;
     private Slot _slot;
     private bool _movementFlag = false;
@@ -32,46 +30,17 @@ public class BodyPart : MonoBehaviour
             _slot = value;
             if (value)
             {
-                item.EnableRealSprite(value.yRotation);
+                item.EnableShadowSprite(value.yRotation,value.connectPosition.position);
             }
             else
             {
-                item.DisableRealSprite();
+                item.DisableShadowSprite();
             }
         }
     }
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        normalPosition = transform.position;
-        targetPosition = normalPosition;
-    }
-
-    // Update is called once per frame
-    // void Update()
-    // {
-    //     if(normalPosition != targetPosition && _movementFlag)
-    //     {
-    //         transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed);
-    //         if (transform.position == targetPosition)
-    //         {
-    //             _movementFlag = false;
-    //             normalPosition = targetPosition;
-    //         }
-    //     }
-    // }
-    
     public void Drag(Vector3 cursorPos,Vector3 offset)
     {
-        //print("drag "+cursorPos+" "+offset);
         transform.position = cursorPos-offset;
-    }
-
-    public void Move(Vector3 position)
-    {
-        _movementFlag = true;
-        normalPosition = transform.position;
-        targetPosition = position;
     }
 }

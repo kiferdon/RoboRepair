@@ -54,4 +54,12 @@ public class Robot : PoolObject
     {
         UpdatePoints?.Invoke(_characteristics, _requiredStats);
     }
+
+    public void Build()
+    {
+        for (int i = 0; i < slots.Count; i++)
+        {
+            slots[i].Build();
+        }
+    }
 }

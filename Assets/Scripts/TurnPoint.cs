@@ -15,6 +15,7 @@ public class TurnPoint : MonoBehaviour
         {
             //print("Trigger");
             EventOnCheckPoint?.Invoke(robot);
+            robot.Build();
         }
     }
 }
