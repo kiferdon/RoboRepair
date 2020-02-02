@@ -48,6 +48,11 @@ public class Slot : MonoBehaviour
         {
             return;
         }
+
+        if (_bodyPart != null)
+        {
+            Remove(_bodyPart);
+        }
         _bodyPart = bodyPart;
         bodyPart.transform.parent = transform;
         bodyPart.transform.localPosition=Vector3.zero;
@@ -78,15 +83,16 @@ public class Slot : MonoBehaviour
 
     public bool CheckEntry(BodyPart bodyPart)
     {
-        if (!_bodyPart)
+        if (bodyPart.item.GetType() == _requiredItemType)
         {
 
-            if (bodyPart.item.GetType() == _requiredItemType)
-            {
-
-                return true;
-            }
+            return true;
         }
+        // if (!_bodyPart)
+        // {
+        //
+        //     
+        // }
         return false;
     }
 

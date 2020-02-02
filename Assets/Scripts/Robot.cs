@@ -15,8 +15,10 @@ public class Robot : PoolObject
     public Characteristics RequiredStats => _requiredStats;
 
     [SerializeField] private List<Slot> slots;
-    [SerializeField] private TextMeshProUGUI _textMeshProUgui;
     public event Action<Characteristics,Characteristics> UpdatePoints;
+    [SerializeField] private ChangeBody changeBody;
+    [SerializeField] private Tablo tablo;
+    
     
     // Start is called before the first frame update
     void Awake()
@@ -49,6 +51,7 @@ public class Robot : PoolObject
             RoboFactory.Instance.GetItemForSlot(slots[i]);
         }
         UpdatePoints?.Invoke(_characteristics, _requiredStats);
+        changeBody.ChangeBodyToShadow();
     }
 
     protected virtual void OnUpdatePoints()
@@ -58,6 +61,8 @@ public class Robot : PoolObject
 
     public void Build()
     {
+        changeBody.ChangeBodyToReal();
+        tablo.HideTablo();
         for (int i = 0; i < slots.Count; i++)
         {
             slots[i].Build();
