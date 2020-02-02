@@ -15,37 +15,37 @@ public class ItemImageSource : Singleton<ItemImageSource>
         _numbersOfRealSprites = new Queue<int>();
     }
 
-    public static Sprite GetHead()
+    public static Sprite GetHead(int number)
     {
-        return Instance.heads[Random.Range(0, Instance.heads.Count)];
+        return Instance.heads[number];
     }
     
-    public static Sprite GetArm()
+    public static Sprite GetArm(int number)
     {
-        return Instance.arms[Random.Range(0, Instance.arms.Count)];
+        return Instance.arms[number];
     }
     
-    public static Sprite GetLeg()
+    public static Sprite GetLeg(int number)
     {
-        return Instance.legs[Random.Range(0, Instance.legs.Count)];
+        return Instance.legs[number];
     }
 
-    public static Sprite GetShadowArm()
+    public static Sprite GetShadowArm(out int randomNumber)
     {
-        var randomNumber = Random.Range(0, Instance.shadowArms.Count);
+        randomNumber = Random.Range(0, Instance.shadowArms.Count);
         Instance._numbersOfRealSprites.Enqueue(randomNumber);
         return Instance.shadowArms[randomNumber];
     }
 
-    public static Sprite GetShadowLeg()
+    public static Sprite GetShadowLeg(out int randomNumber)
     {
-        var randomNumber = Random.Range(0, Instance.shadowLegs.Count);
+        randomNumber = Random.Range(0, Instance.shadowLegs.Count);
         Instance._numbersOfRealSprites.Enqueue(randomNumber);
         return Instance.shadowLegs[randomNumber];    }
 
-    public static Sprite GetShadowHead()
+    public static Sprite GetShadowHead(out int randomNumber)
     {
-        var randomNumber = Random.Range(0, Instance.shadowHeads.Count);
+        randomNumber = Random.Range(0, Instance.shadowHeads.Count);
         Instance._numbersOfRealSprites.Enqueue(randomNumber);
         return Instance.shadowHeads[randomNumber];    }
 }

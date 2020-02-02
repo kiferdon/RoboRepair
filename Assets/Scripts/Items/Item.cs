@@ -17,12 +17,13 @@ namespace Items {
             strengthRenderer.sprite = StatGenerator.DigitToSprite(stats.Strength);
             dexterityRenderer.sprite = StatGenerator.DigitToSprite(stats.Dexterity);
             intelligenceRenderer.sprite = StatGenerator.DigitToSprite(stats.Intelligence);
+            DisableRealSprite();
         }
 
         public void EnableRealSprite(float yRotation,Vector3 connectPosition)
         {
             realSprite.gameObject.SetActive(true);
-            realSprite.transform.Rotate(Vector3.up*(yRotation+180f),Space.Self);
+            realSprite.transform.Rotate(Vector3.up*(yRotation),Space.Self);
             realSprite.transform.position = connectPosition;
             frontRenderer.gameObject.SetActive(false);
             backRenderer.gameObject.SetActive(false);

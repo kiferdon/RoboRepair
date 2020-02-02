@@ -3682,7 +3682,7 @@ MonoBehaviour:
   attach: {fileID: 8300000, guid: 7af5626e7c6e68447b42d20f517c4e41, type: 3}
   detach: {fileID: 8300000, guid: 10cad0bbd34466840a2c5693598ece07, type: 3}
   wrong: {fileID: 8300000, guid: fdddb7de3b2cd124ebcac173ba6c7014, type: 3}
-  pausePanel: {fileID: 1636663416}
+  pausePanel: {fileID: 0}
   winPanel: {fileID: 0}
   losePanel: {fileID: 0}
 --- !u!1 &966929885
@@ -4144,17 +4144,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heads:
-  - {fileID: 21300000, guid: caa48bde8d295894288db1668c43a96f, type: 3}
-  - {fileID: 21300000, guid: e90dfda94eefff449aa33264f492c0ea, type: 3}
-  - {fileID: 21300000, guid: 95ec22962785aff4bb67402cf5151cc3, type: 3}
+  - {fileID: 21300000, guid: d7681e1c3ba7d3b44b975448a979db58, type: 3}
+  - {fileID: 21300000, guid: 3fce4770bea16cb468cfc1efa40916c0, type: 3}
+  - {fileID: 21300000, guid: e97e99b6ee7771145a3e49892b8b64cf, type: 3}
   arms:
-  - {fileID: 21300000, guid: 6e04e605502bfae41bc32e48dc3b71e6, type: 3}
-  - {fileID: 21300000, guid: b670ec17f67fbca46b2cdeb7fb9e7b19, type: 3}
-  - {fileID: 21300000, guid: 28412d10785edb144add2e99be958081, type: 3}
+  - {fileID: 21300000, guid: 6cdb29bb9d6abe24c845b4a39a51847b, type: 3}
+  - {fileID: 21300000, guid: 12c328976539e964090ad796bac4254a, type: 3}
+  - {fileID: 21300000, guid: f2e9c1c2c65d8e548902f5ad6baec54c, type: 3}
   legs:
-  - {fileID: 21300000, guid: 8f10560a892aac4459dca44ba7930a27, type: 3}
-  - {fileID: 21300000, guid: 8601cacce371d9b4aba448158189ca1d, type: 3}
-  - {fileID: 21300000, guid: a99981104cb1ea44ebdc30683852e5df, type: 3}
+  - {fileID: 21300000, guid: 6c946e83e920b364a954586c465c4fb5, type: 3}
+  - {fileID: 21300000, guid: 6512970744dcc9c4bb1cd0f7509d858f, type: 3}
+  - {fileID: 21300000, guid: eeeea453b6fcda8468858e7893866d84, type: 3}
   shadowHeads:
   - {fileID: 21300000, guid: 5aa8f84dd9aaec2419195014ef6a82ee, type: 3}
   - {fileID: 21300000, guid: 5bdd843c8452204478e1c9499ba016ae, type: 3}

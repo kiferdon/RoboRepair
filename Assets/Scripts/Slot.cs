@@ -31,7 +31,7 @@ public class Slot : MonoBehaviour
     {
         if (_bodyPart != null)
         {
-            Destroy(_bodyPart);
+            Destroy(_bodyPart.gameObject);
             _bodyPart = null;
         }
 
@@ -78,7 +78,6 @@ public class Slot : MonoBehaviour
 
     public bool CheckEntry(BodyPart bodyPart)
     {
-        Vector3 position = bodyPart.transform.position;
         if (!_bodyPart)
         {
 

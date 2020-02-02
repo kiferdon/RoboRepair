@@ -6,8 +6,9 @@ namespace Items {
             base.Init();
             frontRenderer.sprite = StatGenerator.GetSprite(Parts.HEAD);
             frontRenderer.color = StatGenerator.GetColor(stats);
-            realSprite.sprite = ItemImageSource.GetHead();
-            shadowSprite.sprite = ItemImageSource.GetShadowHead();
+            int number;
+            shadowSprite.sprite = ItemImageSource.GetShadowHead(out number);
+            realSprite.sprite = ItemImageSource.GetHead(number);
         }
     }
 }
