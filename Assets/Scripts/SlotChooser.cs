@@ -33,7 +33,8 @@ public class SlotChooser : MonoBehaviour {
                     }
                 }
             }
+        InventoryController.Instance.AddItem(itemForSlot.item);
         GameManager.Instance.PlayWrong();
-        inventoryController.AddItem(itemForSlot.item);
+        //inventoryController.AddItem(itemForSlot.item);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Inventory;
 using Items;
 using UnityEditor;
 using UnityEngine;
@@ -8,6 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Slot : MonoBehaviour
 {
+    
     public event Action<Characteristics> ItemAddEvent, ItemRemoveEvent;
     [SerializeField] private Item requiredItemPrefab;
     private Type _requiredItemType;
@@ -51,6 +53,7 @@ public class Slot : MonoBehaviour
 
         if (_bodyPart != null)
         {
+            InventoryController.Instance.AddItem(_bodyPart.item);
             Remove(_bodyPart);
         }
         _bodyPart = bodyPart;
@@ -63,11 +66,14 @@ public class Slot : MonoBehaviour
 
     public void Remove(BodyPart bodyPart)
     {
+
         if (bodyPart == null)
         {
             return;
         }
+
         _bodyPart = null;
+        
         OnItemRemove(bodyPart.Characteristics);
     }
 

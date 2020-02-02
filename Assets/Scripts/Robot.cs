@@ -44,6 +44,7 @@ public class Robot : PoolObject
 
     public override void Init()
     {
+        tablo.ShowTablo();
         _requiredStats = RoboFactory.Instance.CreateRequiredStats();
         _characteristics.agility = 0;
         _characteristics.strength = 0;

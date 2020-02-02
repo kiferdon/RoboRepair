@@ -17,10 +17,25 @@ namespace Utility {
         public static Stats Stats {
             get
             {
-                int maxStat=6;
-                var strength = Random.Range(1, maxStat);
-                var dexterity = Random.Range(1, maxStat);
-                var intelligence = Random.Range(1, maxStat);
+                int randomValue = Random.Range(1, 6);
+                int maxStat=4;
+                int strength = Random.Range(1, maxStat);
+                int dexterity = Random.Range(1, maxStat);
+                int intelligence = Random.Range(1, maxStat);
+                if (randomValue == 1)
+                {
+                    strength = Random.Range(4, 7);
+                }
+                else if (randomValue == 2)
+                {
+                    intelligence = Random.Range(4, 7);
+
+                }
+                else if(randomValue == 3)
+                {
+                    dexterity = Random.Range(4, 7);
+
+                }
                 return new Stats(dexterity, strength, intelligence);
             }
         }
