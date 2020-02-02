@@ -14,7 +14,7 @@ public class RoboFactory : MonoBehaviour
     public static RoboFactory Instance;
     [SerializeField] private BodyPart head,arm,leg;
     
-    [SerializeField] private float probabilityOfFillingSlot;
+    [SerializeField] private float probabilityOfGettingSlot;
     [SerializeField] private Vector2Int minMaxRequiredStats;
     [SerializeField] private ConveyorController conveyorController;
     [SerializeField] private SpawnNewRobot spawnTrigger;
@@ -46,7 +46,7 @@ public class RoboFactory : MonoBehaviour
 
     private BodyPart CreateHead()
     {
-        if (Random.value > probabilityOfFillingSlot)
+        if (Random.value > probabilityOfGettingSlot)
         {
             return null;
         }
@@ -59,7 +59,7 @@ public class RoboFactory : MonoBehaviour
     
     private BodyPart CreateArm()
     {
-        if (Random.value > probabilityOfFillingSlot)
+        if (Random.value > probabilityOfGettingSlot)
         {
             return null;
         }
@@ -74,7 +74,7 @@ public class RoboFactory : MonoBehaviour
     
     private BodyPart CreateLeg()
     {
-        if (Random.value > probabilityOfFillingSlot)
+        if (Random.value > probabilityOfGettingSlot)
         {
             return null;
         }

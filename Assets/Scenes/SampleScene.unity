@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4439,11 +4439,11 @@ MonoBehaviour:
   attach: {fileID: 8300000, guid: 7af5626e7c6e68447b42d20f517c4e41, type: 3}
   detach: {fileID: 8300000, guid: 10cad0bbd34466840a2c5693598ece07, type: 3}
   wrong: {fileID: 8300000, guid: fdddb7de3b2cd124ebcac173ba6c7014, type: 3}
-  win: {fileID: 8300000, guid: a289762a82c64fe43be96b77aa505f34, type: 3}
-  lose: {fileID: 8300000, guid: 9a897fd8fe0dad4448eebd6b54c027ed, type: 3}
-  good: {fileID: 8300000, guid: 7e9b52076e60df14fb1738dc50ba4d9e, type: 3}
-  bad: {fileID: 8300000, guid: e650151d1c2d9b648b565482e5859314, type: 3}
-  hammerPress: {fileID: 8300000, guid: 6a10fa8b5b1aba64d8e66ae1dc709405, type: 3}
+  win: {fileID: 0}
+  lose: {fileID: 0}
+  good: {fileID: 0}
+  bad: {fileID: 0}
+  hammerPress: {fileID: 0}
   pausePanel: {fileID: 1636663416}
   winPanel: {fileID: 1260856329}
   losePanel: {fileID: 252584463}
@@ -6503,7 +6503,7 @@ MonoBehaviour:
   head: {fileID: 4382840644412376549, guid: 8c9b0d8fd96d3f440880b708dd3ce4d8, type: 3}
   arm: {fileID: 7946800199636164959, guid: d56acf18d12413541b878261cd545a18, type: 3}
   leg: {fileID: 5918620613789267109, guid: cc504c778c15ad743a4fec2ecfe7f8be, type: 3}
-  probabilityOfFillingSlot: 0.3
+  probabilityOfGettingSlot: 0.3
   minMaxRequiredStats: {x: 3, y: 9}
   conveyorController: {fileID: 395384728}
   spawnTrigger: {fileID: 2051309149}

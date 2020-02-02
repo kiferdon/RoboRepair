@@ -14,7 +14,7 @@ public class RobotAnalyser : MonoBehaviour {
     private TurnPoint turnPointTrigger;
 
     [SerializeField] private int pointsOnStart;
-
+    private int _before;
 
     private void Awake() {
         if (Instance == null) {
@@ -63,7 +63,7 @@ public class RobotAnalyser : MonoBehaviour {
         }
 
 
-         if (winPoints.value >= before) {
+         if (winPoints.value >= _before) {
             GameManager.Instance.PlayGood();
         }
         else {
@@ -73,5 +73,7 @@ public class RobotAnalyser : MonoBehaviour {
         {
             GameManager.Instance.Lose();
         }
+
+        _before = winPoints.value;
     }
 }
